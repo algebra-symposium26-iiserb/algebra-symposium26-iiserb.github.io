@@ -1,4 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import {
+  HashRouter,
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 import {
   Calendar,
   MapPin,
@@ -13,10 +20,34 @@ import {
   Search
 } from 'lucide-react';
 
+// Scrolls to the top of the page on every route change.
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+  }, [pathname]);
+  return null;
+}
+
 export default function App() {
-  const [activeTab, setActiveTab] = useState('home');
+  return (
+    <HashRouter>
+      <ScrollToTop />
+      <SiteShell />
+    </HashRouter>
+  );
+}
+
+function SiteShell() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const activeTab = location.pathname === '/' ? 'home' : location.pathname.replace('/', '');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+
+  const setActiveTab = (id) => {
+    navigate(id === 'home' ? '/' : `/${id}`);
+  };
 
   const navigation = [
     { id: 'home', label: 'Home' },
@@ -53,40 +84,7 @@ export default function App() {
     },
   ];
 
-  const abstractsData = [
-    {
-      id: 1,
-      title: 'TBA',
-      speaker: 'TBA',
-      institution: 'TBA',
-      topic: 'TBA',
-      abstract: 'TBA',
-    },
-    {
-      id: 2,
-      title: 'Derived Categories in Algebraic Geometry and Representation Theory',
-      speaker: 'TBA',
-      institution: 'TBA',
-      topic: 'Homological Algebra',
-      abstract: 'An exploration into how triangulated and derived categories bridge geometric properties of algebraic varieties with modular representations of finite and reductive groups.',
-    },
-    {
-      id: 3,
-      title: 'Invariant Theory and Moduli Spaces of Vector Bundles',
-      speaker: 'TBA',
-      institution: 'TBA',
-      topic: 'Algebraic Geometry',
-      abstract: 'This talk presents recent constructions of moduli spaces using geometric invariant theory (GIT) stability criteria, with a focus on higher rank bundles over curves and surfaces.',
-    },
-    {
-      id: 4,
-      title: 'Model Categories and Higher Algebraical Structures',
-      speaker: 'TBA',
-      institution: 'TBA',
-      topic: 'Homotopical Algebra',
-      abstract: 'We discuss Quillen model categories, simplicial structures, and how modern infinity-category frameworks simplify traditional computations in abstract homotopy theory.',
-    },
-  ];
+  const abstractsData = [];
 
   const filteredAbstracts = abstractsData.filter(
     (item) =>
@@ -186,10 +184,24 @@ export default function App() {
               onClick={() => setActiveTab('home')}
             >
               <div
-                className="h-9 w-9 rounded-md flex items-center justify-center font-bold text-lg mono"
-                style={{ background: '#2A3A5C', color: '#FAF9F6' }}
+                className="h-9 w-9 rounded-md flex items-center justify-center"
+                style={{ background: '#2A3A5C' }}
               >
-                ∑
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <circle cx="5" cy="5" r="2.1" fill="#FAF9F6" />
+                  <circle cx="19" cy="5" r="2.1" fill="#FAF9F6" />
+                  <circle cx="5" cy="19" r="2.1" fill="#FAF9F6" />
+                  <circle cx="19" cy="19" r="2.1" fill="#FAF9F6" />
+                  <path d="M7 5H17" stroke="#FAF9F6" strokeWidth="1.4" markerEnd="url(#arrow)" />
+                  <path d="M5 7V17" stroke="#FAF9F6" strokeWidth="1.4" markerEnd="url(#arrow)" />
+                  <path d="M19 7V17" stroke="#FAF9F6" strokeWidth="1.4" markerEnd="url(#arrow)" />
+                  <path d="M7 19H17" stroke="#FAF9F6" strokeWidth="1.4" markerEnd="url(#arrow)" />
+                  <defs>
+                    <marker id="arrow" markerWidth="5" markerHeight="5" refX="4" refY="2" orient="auto">
+                      <path d="M0,0 L4,2 L0,4 Z" fill="#FAF9F6" />
+                    </marker>
+                  </defs>
+                </svg>
               </div>
               <div>
                 <span className="text-lg font-semibold tracking-tight" style={{ color: '#2B2B2E' }}>
@@ -258,6 +270,8 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-grow">
+       <Routes>
+        <Route path="*" element={<>
         {/* ==================== HOME / LANDING PAGE ==================== */}
         {activeTab === 'home' && (
           <div>
@@ -575,6 +589,8 @@ export default function App() {
             </div>
           </div>
         )}
+        </>} />
+       </Routes>
       </main>
 
       {/* Footer */}
