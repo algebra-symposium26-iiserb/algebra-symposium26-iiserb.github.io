@@ -44,7 +44,7 @@ export default function App() {
     {
       date: 'Day 2: September 18, 2026',
       events: [
-        { time: '09:30 - 10:30', title: 'Plenary Lecture: Structure Theory of Algebraic Groups', speaker: 'Invited Speaker', venue: 'Auditorium Hall A' },
+        { time: '09:30 - 10:30', title: 'Plenary Lecture: TBA', speaker: 'Invited Speaker', venue: 'Auditorium Hall A' },
         { time: '10:30 - 11:00', title: 'Morning Tea', speaker: '', venue: 'Foyer' },
         { time: '11:00 - 12:30', title: 'Contributed Research Talks (Session II)', speaker: 'Multiple Presenters', venue: 'Seminar Hall 1 & 2' },
         { time: '12:30 - 14:00', title: 'Lunch Break', speaker: '', venue: 'Dining Hall' },
