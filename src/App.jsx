@@ -268,7 +268,7 @@ export default function App() {
                 </h1>
 
                 <p className="fade-in fade-in-3 max-w-2xl mx-auto text-base sm:text-lg mb-8 leading-relaxed" style={{ color: '#5C5A52' }}>
-                  Bringing together researchers, academicians, and students from across the country to discuss cutting-edge frontiers in Commutative Algebra, Algebraic Geometry, Representation Theory, and Homological Methods.
+                  Bringing together researchers, academicians, and students to discuss ongoing research in Commutative Algebra, Algebraic Geometry,  and Representation Theory.
                 </p>
 
                 {/* Event Highlights Badges */}
@@ -316,7 +316,7 @@ export default function App() {
                 Thematic Areas
               </h2>
               <p className="text-center mb-12 max-w-xl mx-auto sans" style={{ color: '#6B6A5F' }}>
-                Key focus branches explored across plenary talks, invited sessions, and contributed research papers.
+                Key areas of focus
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -354,17 +354,17 @@ export default function App() {
               <div className="p-6 sm:p-8 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DFDACD' }}>
                 <h2 className="text-xl font-semibold mb-3" style={{ color: '#2B2B2E' }}>Overview & Vision</h2>
                 <p className="mb-4">
-                  The <strong>Algebra Symposium 2026</strong> is organized by the Department of Mathematics at the Indian Institute of Science Education and Research (IISER) Bhopal. Scheduled from <strong>September 17 to September 18, 2026</strong>, the symposium aims to create a dynamic collaborative environment for researchers, faculty members, postdocs, and students specializing in pure algebra and related geometric and topological disciplines.
+                  The <strong>Algebra Symposium 2026</strong> is organized by the Department of Mathematics at the Indian Institute of Science Education and Research (IISER) Bhopal. Scheduled from <strong>September 17 to September 18, 2026</strong>, this symposium aims to create a learning environment for researchers, faculty members, postdocs, and students specializing in abstract algebra.
                 </p>
                 <p>
-                  The two-day conference features pedagogical keynote addresses, specialized research presentations, and poster sessions to facilitate academic exchange and foster potential inter-institutional collaborations.
+                  This two-day event includes keynote addresses, presentations, and poster sessions to facilitate academic exchange and foster potential collaborations.
                 </p>
               </div>
 
               <div className="p-6 sm:p-8 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DFDACD' }}>
                 <h2 className="text-xl font-semibold mb-3" style={{ color: '#2B2B2E' }}>About IISER Bhopal</h2>
                 <p>
-                  Established in 2008 by the Ministry of Education, Government of India, IISER Bhopal is dedicated to fostering the highest quality of scientific research and education. The Department of Mathematics at IISER Bhopal actively engages in research spanning diverse pure and applied disciplines, including Algebra, Number Theory, Geometry, Topology, and Analysis.
+                  IISER Bhopal was established in 2008 by the Ministry of Education, Government of India, and is dedicated to fostering the highest quality of scientific research and education. The Department of Mathematics at IISER Bhopal actively engages in research spanning diverse pure and applied disciplines, including Algebra, Number Theory, Geometry, Topology, and Analysis.
                 </p>
               </div>
 
@@ -372,7 +372,7 @@ export default function App() {
                 <div className="p-5 rounded-lg" style={{ background: '#F6F2EA', border: '1px solid #DFDACD' }}>
                   <h3 className="font-semibold mb-2" style={{ color: '#2B2B2E' }}>Venue</h3>
                   <p className="text-sm" style={{ color: '#6B6A5F' }}>
-                    Main Auditorium & Lecture Hall Complex,<br />
+                    Academic Block - 1 & Lecture Hall Complex,<br />
                     IISER Bhopal Campus, Bhauri,<br />
                     Bhopal 462066, Madhya Pradesh, India
                   </p>
