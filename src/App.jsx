@@ -58,25 +58,25 @@ export default function App() {
     {
       date: 'Day 1 — September 17, 2026',
       events: [
-        { time: '09:00 – 09:30', title: 'Inauguration & Welcome Address', speaker: 'TBA', venue: 'Auditorium Hall A' },
-        { time: '09:30 – 10:30', title: 'Keynote Talk 1: Modern Perspectives in Commutative Algebra', speaker: 'TBA', venue: 'Auditorium Hall A' },
-        { time: '10:30 – 11:00', title: 'High Tea & Networking', speaker: '', venue: 'Foyer' },
-        { time: '11:00 – 12:00', title: 'Invited Lecture: Homological Methods & Derived Categories', speaker: 'TBA', venue: 'Auditorium Hall A' },
-        { time: '12:00 – 13:00', title: 'Contributed Research Talks (Session I)', speaker: 'TBA', venue: 'Seminar Hall 1 & 2' },
-        { time: '13:00 – 14:30', title: 'Lunch Break', speaker: '', venue: 'Dining Hall' },
-        { time: '14:30 – 15:30', title: 'Plenary Lecture: Geometric Invariant Theory & Moduli', speaker: 'TBA', venue: 'Auditorium Hall A' },
-        { time: '15:30 – 17:00', title: 'Poster Session & Discussion', speaker: '', venue: 'Math Concourse' },
+        { time: '09:00 – 09:30', title: 'TBA', speaker: 'TBA', venue: 'LHC' },
+        { time: '09:30 – 10:30', title: 'TBA', speaker: 'TBA', venue: 'LHC' },
+        { time: '10:30 – 11:00', title: 'TBA', speaker: '', venue: 'LHC' },
+        { time: '11:00 – 12:00', title: 'TBA', speaker: 'TBA', venue: 'LHC' },
+        { time: '12:00 – 13:00', title: 'TBA', speaker: 'TBA', venue: 'AB1' },
+        { time: '13:00 – 14:30', title: 'TBA', speaker: '', venue: 'AB1' },
+        { time: '14:30 – 15:30', title: 'TBA', speaker: 'TBA', venue: 'LHC' },
+        { time: '15:30 – 17:00', title: 'TBA', speaker: '', venue: 'AB1' },
       ],
     },
     {
       date: 'Day 2 — September 18, 2026',
       events: [
-        { time: '09:30 – 10:30', title: 'Plenary Lecture: TBA', speaker: 'TBA', venue: 'Auditorium Hall A' },
-        { time: '10:30 – 11:00', title: 'Morning Tea', speaker: '', venue: 'Foyer' },
-        { time: '11:00 – 12:30', title: 'Contributed Research Talks (Session II)', speaker: 'TBA', venue: 'Seminar Hall 1 & 2' },
-        { time: '12:30 – 14:00', title: 'Lunch Break', speaker: '', venue: 'Dining Hall' },
-        { time: '14:00 – 15:00', title: 'Special Session on Category Theory & Applications', speaker: 'TBA', venue: 'Auditorium Hall A' },
-        { time: '15:00 – 16:00', title: 'Concluding Remarks & Valedictory Session', speaker: 'TBA', venue: 'Auditorium Hall A' },
+        { time: '09:30 – 10:30', title: 'TBA', speaker: 'TBA', venue: 'LHC' },
+        { time: '10:30 – 11:00', title: 'TBA', speaker: '', venue: 'LHC' },
+        { time: '11:00 – 12:30', title: 'TBA', speaker: 'TBA', venue: 'AB1' },
+        { time: '12:30 – 14:00', title: 'TBA', speaker: '', venue: 'AB1' },
+        { time: '14:00 – 15:00', title: 'TBA', speaker: 'TBA', venue: 'LHC' },
+        { time: '15:00 – 16:00', title: 'TBA', speaker: 'TBA', venue: 'LHC' },
       ],
     },
   ];
@@ -94,13 +94,13 @@ export default function App() {
     <div
       className="min-h-screen flex flex-col"
       style={{
-        background: '#FAF9F6',
-        color: '#2B2B2E',
-        fontFamily: "'Source Serif 4', 'Georgia', serif",
+        background: '#FBFAF7',
+        color: '#242422',
+        fontFamily: "'Fraunces', 'Georgia', serif",
       }}
     >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
         html {
           scroll-behavior: smooth;
@@ -147,7 +147,7 @@ export default function App() {
         }
         .soft-card:hover {
           transform: translateY(-3px);
-          box-shadow: 0 12px 28px -12px rgba(43, 58, 90, 0.18);
+          box-shadow: 0 12px 28px -12px rgba(60, 74, 62, 0.18);
           border-color: #C9C4B4 !important;
         }
         .cta-button {
@@ -155,13 +155,13 @@ export default function App() {
         }
         .cta-button:hover {
           transform: translateY(-2px) scale(1.015);
-          box-shadow: 0 10px 24px -10px rgba(30, 42, 68, 0.35);
+          box-shadow: 0 10px 24px -10px rgba(60, 74, 62, 0.32);
         }
         .sans {
-          font-family: 'Source Sans 3', 'Helvetica Neue', sans-serif;
+          font-family: 'Inter', 'Helvetica Neue', sans-serif;
         }
         .mono {
-          font-family: 'JetBrains Mono', monospace;
+          font-family: 'IBM Plex Mono', monospace;
         }
       `}</style>
 
@@ -169,9 +169,9 @@ export default function App() {
       <header
         className="sticky top-0 z-50 sans"
         style={{
-          background: 'rgba(250, 249, 246, 0.92)',
+          background: 'rgba(251, 250, 247, 0.92)',
           backdropFilter: 'blur(8px)',
-          borderBottom: '1px solid #DCD8CC',
+          borderBottom: '1px solid #DFDACD',
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -181,24 +181,10 @@ export default function App() {
               onClick={() => setActiveTab('home')}
             >
               <div
-                className="h-9 w-9 rounded-md flex items-center justify-center"
-                style={{ background: '#2A3A5C' }}
+                className="h-9 w-9 rounded-md flex items-center justify-center font-bold text-lg mono"
+                style={{ background: '#3C4A3E', color: '#FBFAF7' }}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <circle cx="5" cy="5" r="2.1" fill="#FAF9F6" />
-                  <circle cx="19" cy="5" r="2.1" fill="#FAF9F6" />
-                  <circle cx="5" cy="19" r="2.1" fill="#FAF9F6" />
-                  <circle cx="19" cy="19" r="2.1" fill="#FAF9F6" />
-                  <path d="M7 5H17" stroke="#FAF9F6" strokeWidth="1.4" markerEnd="url(#arrow)" />
-                  <path d="M5 7V17" stroke="#FAF9F6" strokeWidth="1.4" markerEnd="url(#arrow)" />
-                  <path d="M19 7V17" stroke="#FAF9F6" strokeWidth="1.4" markerEnd="url(#arrow)" />
-                  <path d="M7 19H17" stroke="#FAF9F6" strokeWidth="1.4" markerEnd="url(#arrow)" />
-                  <defs>
-                    <marker id="arrow" markerWidth="5" markerHeight="5" refX="4" refY="2" orient="auto">
-                      <path d="M0,0 L4,2 L0,4 Z" fill="#FAF9F6" />
-                    </marker>
-                  </defs>
-                </svg>
+                ∑
               </div>
               <div>
                 <span className="text-lg font-semibold tracking-tight" style={{ color: '#2B2B2E' }}>
@@ -216,9 +202,9 @@ export default function App() {
                   onClick={() => setActiveTab(item.id)}
                   className="nav-link px-4 py-2 rounded-md text-sm font-medium"
                   style={{
-                    color: activeTab === item.id ? '#2A3A5C' : '#5C5A52',
-                    background: activeTab === item.id ? '#EFEBE0' : 'transparent',
-                    border: activeTab === item.id ? '1px solid #D8D2C0' : '1px solid transparent',
+                    color: activeTab === item.id ? '#3C4A3E' : '#5C5A52',
+                    background: activeTab === item.id ? '#EFEAE0' : 'transparent',
+                    border: activeTab === item.id ? '1px solid #DAD3C0' : '1px solid transparent',
                   }}
                 >
                   {item.label}
@@ -243,7 +229,7 @@ export default function App() {
         {mobileMenuOpen && (
           <div
             className="md:hidden px-4 pt-2 pb-4 space-y-1"
-            style={{ background: '#FAF9F6', borderBottom: '1px solid #DCD8CC' }}
+            style={{ background: '#FBFAF7', borderBottom: '1px solid #DFDACD' }}
           >
             {navigation.map((item) => (
               <button
@@ -254,8 +240,8 @@ export default function App() {
                 }}
                 className="nav-link block w-full text-left px-3 py-2 rounded-md text-base font-medium"
                 style={{
-                  color: activeTab === item.id ? '#2A3A5C' : '#5C5A52',
-                  background: activeTab === item.id ? '#EFEBE0' : 'transparent',
+                  color: activeTab === item.id ? '#3C4A3E' : '#5C5A52',
+                  background: activeTab === item.id ? '#EFEAE0' : 'transparent',
                 }}
               >
                 {item.label}
@@ -273,20 +259,12 @@ export default function App() {
             {/* Hero Section */}
             <section
               className="relative overflow-hidden py-24 md:py-32"
-              style={{ borderBottom: '1px solid #DCD8CC' }}
+              style={{ borderBottom: '1px solid #DFDACD' }}
             >
               <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div
-                  className="fade-in fade-in-1 inline-flex items-center space-x-2 px-3 py-1 rounded-full sans text-xs sm:text-sm font-medium mb-6"
-                  style={{ border: '1px solid #C7BFA6', background: '#F1EDE0', color: '#6B5F3E' }}
-                >
-                  <span className="mono">§</span>
-                  <span>Annual National Mathematics Conference</span>
-                </div>
-
                 <h1 className="fade-in fade-in-2 text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6" style={{ color: '#2B2B2E' }}>
                   Algebra Symposium <br />
-                  <span style={{ color: '#2A3A5C' }}>IISER Bhopal 2026</span>
+                  <span style={{ color: '#3C4A3E' }}>IISER Bhopal 2026</span>
                 </h1>
 
                 <p className="fade-in fade-in-3 max-w-2xl mx-auto text-base sm:text-lg mb-8 leading-relaxed" style={{ color: '#5C5A52' }}>
@@ -297,14 +275,14 @@ export default function App() {
                 <div className="fade-in fade-in-4 flex flex-wrap items-center justify-center gap-4 text-sm font-medium mb-10 sans">
                   <div
                     className="soft-card flex items-center space-x-2 px-4 py-2 rounded-lg"
-                    style={{ background: '#FFFFFF', border: '1px solid #DCD8CC', color: '#3F3D38' }}
+                    style={{ background: '#FFFFFF', border: '1px solid #DFDACD', color: '#3F3D38' }}
                   >
-                    <Calendar size={18} style={{ color: '#2A3A5C' }} />
+                    <Calendar size={18} style={{ color: '#3C4A3E' }} />
                     <span>September 17–18, 2026</span>
                   </div>
                   <div
                     className="soft-card flex items-center space-x-2 px-4 py-2 rounded-lg"
-                    style={{ background: '#FFFFFF', border: '1px solid #DCD8CC', color: '#3F3D38' }}
+                    style={{ background: '#FFFFFF', border: '1px solid #DFDACD', color: '#3F3D38' }}
                   >
                     <MapPin size={18} style={{ color: '#8C5A5A' }} />
                     <span>IISER Bhopal, Madhya Pradesh, India</span>
@@ -315,7 +293,7 @@ export default function App() {
                   <button
                     onClick={() => setActiveTab('schedule')}
                     className="cta-button w-full sm:w-auto px-7 py-3 rounded-lg font-semibold flex items-center justify-center space-x-2"
-                    style={{ background: '#2A3A5C', color: '#FAF9F6' }}
+                    style={{ background: '#3C4A3E', color: '#FBFAF7' }}
                   >
                     <span>View Schedule</span>
                     <ChevronRight size={18} />
@@ -341,26 +319,24 @@ export default function App() {
                 Key focus branches explored across plenary talks, invited sessions, and contributed research papers.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { title: 'Commutative Algebra', desc: 'Syzygies, free resolutions, local cohomology, Cohen-Macaulay rings, and combinatorial methods.' },
-                  { title: 'Algebraic Geometry', desc: 'Moduli spaces, projective varieties, intersection theory, and derived algebraic geometry.' },
-                  { title: 'Representation Theory', desc: 'Lie algebras, quantum groups, quiver representations, and modular representation theory.' },
-                  { title: 'Homological & Category Theory', desc: 'Derived categories, triangulated categories, model categories, and operads.' },
+                  { title: 'Commutative Algebra' },
+                  { title: 'Algebraic Geometry' },
+                  { title: 'Representation Theory' },
                 ].map((item, idx) => (
                   <div
                     key={idx}
                     className="soft-card stagger-card p-6 rounded-lg"
-                    style={{ background: '#FFFFFF', border: '1px solid #DCD8CC', animationDelay: `${0.1 + idx * 0.08}s` }}
+                    style={{ background: '#FFFFFF', border: '1px solid #DFDACD', animationDelay: `${0.1 + idx * 0.08}s` }}
                   >
                     <div
                       className="w-10 h-10 rounded-md flex items-center justify-center font-bold mb-4 mono"
-                      style={{ background: '#EFEBE0', color: '#2A3A5C' }}
+                      style={{ background: '#EFEAE0', color: '#3C4A3E' }}
                     >
                       §{idx + 1}
                     </div>
-                    <h3 className="text-lg font-semibold mb-2" style={{ color: '#2B2B2E' }}>{item.title}</h3>
-                    <p className="text-sm leading-relaxed sans" style={{ color: '#6B6A5F' }}>{item.desc}</p>
+                    <h3 className="text-lg font-semibold" style={{ color: '#2B2B2E' }}>{item.title}</h3>
                   </div>
                 ))}
               </div>
@@ -372,10 +348,10 @@ export default function App() {
         {activeTab === 'about' && (
           <div className="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#2B2B2E' }}>About the Symposium</h1>
-            <p className="font-medium mb-8 sans" style={{ color: '#2A3A5C' }}>Department of Mathematics, IISER Bhopal</p>
+            <p className="font-medium mb-8 sans" style={{ color: '#3C4A3E' }}>Department of Mathematics, IISER Bhopal</p>
 
             <div className="space-y-6 leading-relaxed" style={{ color: '#3F3D38' }}>
-              <div className="p-6 sm:p-8 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}>
+              <div className="p-6 sm:p-8 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DFDACD' }}>
                 <h2 className="text-xl font-semibold mb-3" style={{ color: '#2B2B2E' }}>Overview & Vision</h2>
                 <p className="mb-4">
                   The <strong>Algebra Symposium 2026</strong> is organized by the Department of Mathematics at the Indian Institute of Science Education and Research (IISER) Bhopal. Scheduled from <strong>September 17 to September 18, 2026</strong>, the symposium aims to create a dynamic collaborative environment for researchers, faculty members, postdocs, and students specializing in pure algebra and related geometric and topological disciplines.
@@ -385,7 +361,7 @@ export default function App() {
                 </p>
               </div>
 
-              <div className="p-6 sm:p-8 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}>
+              <div className="p-6 sm:p-8 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DFDACD' }}>
                 <h2 className="text-xl font-semibold mb-3" style={{ color: '#2B2B2E' }}>About IISER Bhopal</h2>
                 <p>
                   Established in 2008 by the Ministry of Education, Government of India, IISER Bhopal is dedicated to fostering the highest quality of scientific research and education. The Department of Mathematics at IISER Bhopal actively engages in research spanning diverse pure and applied disciplines, including Algebra, Number Theory, Geometry, Topology, and Analysis.
@@ -393,7 +369,7 @@ export default function App() {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 sans">
-                <div className="p-5 rounded-lg" style={{ background: '#F5F3EC', border: '1px solid #DCD8CC' }}>
+                <div className="p-5 rounded-lg" style={{ background: '#F6F2EA', border: '1px solid #DFDACD' }}>
                   <h3 className="font-semibold mb-2" style={{ color: '#2B2B2E' }}>Venue</h3>
                   <p className="text-sm" style={{ color: '#6B6A5F' }}>
                     Main Auditorium & Lecture Hall Complex,<br />
@@ -401,7 +377,7 @@ export default function App() {
                     Bhopal 462066, Madhya Pradesh, India
                   </p>
                 </div>
-                <div className="p-5 rounded-lg" style={{ background: '#F5F3EC', border: '1px solid #DCD8CC' }}>
+                <div className="p-5 rounded-lg" style={{ background: '#F6F2EA', border: '1px solid #DFDACD' }}>
                   <h3 className="font-semibold mb-2" style={{ color: '#2B2B2E' }}>Dates</h3>
                   <p className="text-sm" style={{ color: '#6B6A5F' }}>
                     Thursday, September 17, 2026<br />
@@ -423,11 +399,11 @@ export default function App() {
 
             <div className="space-y-12">
               {scheduleData.map((day, idx) => (
-                <div key={idx} className="stagger-card rounded-lg overflow-hidden" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC', animationDelay: `${idx * 0.1}s` }}>
-                  <div className="px-6 py-4" style={{ background: '#EFEBE0', borderBottom: '1px solid #DCD8CC' }}>
-                    <h2 className="text-xl font-semibold" style={{ color: '#2A3A5C' }}>{day.date}</h2>
+                <div key={idx} className="stagger-card rounded-lg overflow-hidden" style={{ background: '#FFFFFF', border: '1px solid #DFDACD', animationDelay: `${idx * 0.1}s` }}>
+                  <div className="px-6 py-4" style={{ background: '#EFEAE0', borderBottom: '1px solid #DFDACD' }}>
+                    <h2 className="text-xl font-semibold" style={{ color: '#3C4A3E' }}>{day.date}</h2>
                   </div>
-                  <div className="divide-y" style={{ borderColor: '#E7E3D6' }}>
+                  <div className="divide-y" style={{ borderColor: '#E9E4D6' }}>
                     {day.events.map((event, eventIdx) => (
                       <div
                         key={eventIdx}
@@ -437,7 +413,7 @@ export default function App() {
                         <div className="flex items-start space-x-4">
                           <div
                             className="flex items-center space-x-1.5 text-xs font-semibold mono px-2.5 py-1 rounded-md whitespace-nowrap"
-                            style={{ color: '#2A3A5C', background: '#EFEBE0', border: '1px solid #D8D2C0' }}
+                            style={{ color: '#3C4A3E', background: '#EFEAE0', border: '1px solid #DAD3C0' }}
                           >
                             <Clock size={13} />
                             <span>{event.time}</span>
@@ -451,7 +427,7 @@ export default function App() {
                         </div>
                         <div
                           className="text-xs mono px-3 py-1 rounded-full self-start sm:self-center"
-                          style={{ background: '#F5F3EC', color: '#6B6A5F', border: '1px solid #E7E3D6' }}
+                          style={{ background: '#F6F2EA', color: '#6B6A5F', border: '1px solid #E9E4D6' }}
                         >
                           {event.venue}
                         </div>
@@ -482,7 +458,7 @@ export default function App() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-9 pr-4 py-2 rounded-lg text-sm focus:outline-none transition-colors"
-                  style={{ background: '#FFFFFF', border: '1px solid #DCD8CC', color: '#2B2B2E' }}
+                  style={{ background: '#FFFFFF', border: '1px solid #DFDACD', color: '#2B2B2E' }}
                 />
               </div>
             </div>
@@ -490,11 +466,11 @@ export default function App() {
             <div className="space-y-6">
               {filteredAbstracts.length > 0 ? (
                 filteredAbstracts.map((item, idx) => (
-                  <div key={item.id} className="soft-card stagger-card p-6 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC', animationDelay: `${idx * 0.07}s` }}>
+                  <div key={item.id} className="soft-card stagger-card p-6 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DFDACD', animationDelay: `${idx * 0.07}s` }}>
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2 sans">
                       <span
                         className="text-xs font-medium mono px-2.5 py-0.5 rounded"
-                        style={{ color: '#2A3A5C', background: '#EFEBE0', border: '1px solid #D8D2C0' }}
+                        style={{ color: '#3C4A3E', background: '#EFEAE0', border: '1px solid #DAD3C0' }}
                       >
                         {item.topic}
                       </span>
@@ -506,7 +482,7 @@ export default function App() {
                   </div>
                 ))
               ) : (
-                <div className="text-center py-12 rounded-lg sans" style={{ background: '#F5F3EC', border: '1px solid #DCD8CC' }}>
+                <div className="text-center py-12 rounded-lg sans" style={{ background: '#F6F2EA', border: '1px solid #DFDACD' }}>
                   <p style={{ color: '#8A8577' }}>No abstracts match your query.</p>
                 </div>
               )}
@@ -523,9 +499,9 @@ export default function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sans">
               {/* Contact Information */}
               <div className="space-y-6">
-                <div className="soft-card p-6 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}>
+                <div className="soft-card p-6 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DFDACD' }}>
                   <h2 className="text-lg font-semibold mb-4 flex items-center space-x-2" style={{ color: '#2B2B2E' }}>
-                    <Mail size={20} style={{ color: '#2A3A5C' }} />
+                    <Mail size={20} style={{ color: '#3C4A3E' }} />
                     <span>Correspondence</span>
                   </h2>
                   <div className="space-y-3 text-sm" style={{ color: '#3F3D38' }}>
@@ -536,7 +512,7 @@ export default function App() {
                         target="_blank"
                         rel="noreferrer"
                         className="link-hover inline-flex items-center space-x-1"
-                        style={{ color: '#2A3A5C' }}
+                        style={{ color: '#3C4A3E' }}
                       >
                         <span>maths.iiserb.ac.in</span>
                         <ExternalLink size={12} />
@@ -545,9 +521,9 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="soft-card p-6 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}>
+                <div className="soft-card p-6 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DFDACD' }}>
                   <h2 className="text-lg font-semibold mb-4 flex items-center space-x-2" style={{ color: '#2B2B2E' }}>
-                    <Users size={20} style={{ color: '#2A3A5C' }} />
+                    <Users size={20} style={{ color: '#3C4A3E' }} />
                     <span>Organizing Committee</span>
                   </h2>
                   <ul className="space-y-2 text-sm" style={{ color: '#3F3D38' }}>
@@ -559,7 +535,7 @@ export default function App() {
               </div>
 
               {/* Location & Travel */}
-              <div className="soft-card p-6 rounded-lg flex flex-col justify-between" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}>
+              <div className="soft-card p-6 rounded-lg flex flex-col justify-between" style={{ background: '#FFFFFF', border: '1px solid #DFDACD' }}>
                 <div>
                   <h2 className="text-lg font-semibold mb-4 flex items-center space-x-2" style={{ color: '#2B2B2E' }}>
                     <MapPin size={20} style={{ color: '#8C5A5A' }} />
@@ -577,7 +553,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 text-xs mono" style={{ borderTop: '1px solid #E7E3D6', color: '#8A8577' }}>
+                <div className="mt-6 pt-4 text-xs mono" style={{ borderTop: '1px solid #E9E4D6', color: '#8A8577' }}>
                   GPS Coordinates: 23.286845° N, 77.275766° E
                 </div>
               </div>
@@ -587,7 +563,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="sans" style={{ borderTop: '1px solid #DCD8CC', background: '#F5F3EC' }}>
+      <footer className="sans" style={{ borderTop: '1px solid #DFDACD', background: '#F6F2EA' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs" style={{ color: '#8A8577' }}>
           <div>
             © 2026 Algebra Symposium | Department of Mathematics, IISER Bhopal.
