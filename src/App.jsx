@@ -1,11 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import {
-  HashRouter,
-  Routes,
-  Route,
-  useLocation,
-  useNavigate,
-} from 'react-router-dom';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Calendar,
   MapPin,
@@ -20,34 +13,38 @@ import {
   Search
 } from 'lucide-react';
 
-// Scrolls to the top of the page on every route change.
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
-  }, [pathname]);
-  return null;
+// Reads the current page id from the URL hash (e.g. "#/schedule" -> "schedule").
+function getTabFromHash() {
+  const hash = window.location.hash || '';
+  const cleaned = hash.replace(/^#\/?/, '');
+  return cleaned === '' ? 'home' : cleaned;
 }
 
 export default function App() {
-  return (
-    <HashRouter>
-      <ScrollToTop />
-      <SiteShell />
-    </HashRouter>
-  );
-}
-
-function SiteShell() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const activeTab = location.pathname === '/' ? 'home' : location.pathname.replace('/', '');
+  const [activeTab, setActiveTabState] = useState(getTabFromHash());
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const setActiveTab = (id) => {
-    navigate(id === 'home' ? '/' : `/${id}`);
-  };
+  // Keep activeTab in sync if the user uses browser back/forward.
+  useEffect(() => {
+    const onHashChange = () => setActiveTabState(getTabFromHash());
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  // Every time the page changes, scroll to the top.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeTab]);
+
+  const setActiveTab = useCallback((id) => {
+    const path = id === 'home' ? '#/' : `#/${id}`;
+    if (window.location.hash !== path) {
+      window.location.hash = path;
+    }
+    setActiveTabState(id);
+    window.scrollTo(0, 0);
+  }, []);
 
   const navigation = [
     { id: 'home', label: 'Home' },
@@ -270,8 +267,6 @@ function SiteShell() {
 
       {/* Main Content Area */}
       <main className="flex-grow">
-       <Routes>
-        <Route path="*" element={<>
         {/* ==================== HOME / LANDING PAGE ==================== */}
         {activeTab === 'home' && (
           <div>
@@ -589,8 +584,6 @@ function SiteShell() {
             </div>
           </div>
         )}
-        </>} />
-       </Routes>
       </main>
 
       {/* Footer */}
