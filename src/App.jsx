@@ -107,8 +107,33 @@ export default function App() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
+        html {
+          scroll-behavior: smooth;
+        }
+
+        * {
+          transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        @keyframes fadeSlideUp {
+          from { opacity: 0; transform: translateY(14px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+          animation: fadeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .fade-in-1 { animation-delay: 0.05s; }
+        .fade-in-2 { animation-delay: 0.15s; }
+        .fade-in-3 { animation-delay: 0.25s; }
+        .fade-in-4 { animation-delay: 0.35s; }
+
+        .stagger-card {
+          animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
         .link-hover {
-          transition: transform 0.18s ease, color 0.18s ease;
+          transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), color 0.28s ease;
           display: inline-block;
         }
         .link-hover:hover {
@@ -116,11 +141,26 @@ export default function App() {
           color: #B23A48 !important;
         }
         .nav-link {
-          transition: transform 0.18s ease, color 0.18s ease, background-color 0.18s ease;
+          transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), color 0.28s ease, background-color 0.28s ease;
         }
         .nav-link:hover {
           transform: translateY(-1px);
           color: #B23A48 !important;
+        }
+        .soft-card {
+          transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s ease, border-color 0.32s ease;
+        }
+        .soft-card:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 12px 28px -12px rgba(43, 58, 90, 0.18);
+          border-color: #C9C4B4 !important;
+        }
+        .cta-button {
+          transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease, background-color 0.28s ease;
+        }
+        .cta-button:hover {
+          transform: translateY(-2px) scale(1.015);
+          box-shadow: 0 10px 24px -10px rgba(30, 42, 68, 0.35);
         }
         .sans {
           font-family: 'Source Sans 3', 'Helvetica Neue', sans-serif;
@@ -147,7 +187,7 @@ export default function App() {
             >
               <div
                 className="h-9 w-9 rounded-md flex items-center justify-center font-bold text-lg mono"
-                style={{ background: '#3B4A6B', color: '#FAF9F6' }}
+                style={{ background: '#2A3A5C', color: '#FAF9F6' }}
               >
                 ∑
               </div>
@@ -167,7 +207,7 @@ export default function App() {
                   onClick={() => setActiveTab(item.id)}
                   className="nav-link px-4 py-2 rounded-md text-sm font-medium"
                   style={{
-                    color: activeTab === item.id ? '#3B4A6B' : '#5C5A52',
+                    color: activeTab === item.id ? '#2A3A5C' : '#5C5A52',
                     background: activeTab === item.id ? '#EFEBE0' : 'transparent',
                     border: activeTab === item.id ? '1px solid #D8D2C0' : '1px solid transparent',
                   }}
@@ -205,7 +245,7 @@ export default function App() {
                 }}
                 className="nav-link block w-full text-left px-3 py-2 rounded-md text-base font-medium"
                 style={{
-                  color: activeTab === item.id ? '#3B4A6B' : '#5C5A52',
+                  color: activeTab === item.id ? '#2A3A5C' : '#5C5A52',
                   background: activeTab === item.id ? '#EFEBE0' : 'transparent',
                 }}
               >
@@ -228,33 +268,33 @@ export default function App() {
             >
               <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div
-                  className="inline-flex items-center space-x-2 px-3 py-1 rounded-full sans text-xs sm:text-sm font-medium mb-6"
+                  className="fade-in fade-in-1 inline-flex items-center space-x-2 px-3 py-1 rounded-full sans text-xs sm:text-sm font-medium mb-6"
                   style={{ border: '1px solid #C7BFA6', background: '#F1EDE0', color: '#6B5F3E' }}
                 >
                   <span className="mono">§</span>
                   <span>Annual National Mathematics Conference</span>
                 </div>
 
-                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6" style={{ color: '#2B2B2E' }}>
+                <h1 className="fade-in fade-in-2 text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6" style={{ color: '#2B2B2E' }}>
                   Algebra Symposium <br />
-                  <span style={{ color: '#3B4A6B' }}>IISER Bhopal 2026</span>
+                  <span style={{ color: '#2A3A5C' }}>IISER Bhopal 2026</span>
                 </h1>
 
-                <p className="max-w-2xl mx-auto text-base sm:text-lg mb-8 leading-relaxed" style={{ color: '#5C5A52' }}>
+                <p className="fade-in fade-in-3 max-w-2xl mx-auto text-base sm:text-lg mb-8 leading-relaxed" style={{ color: '#5C5A52' }}>
                   Bringing together researchers, academicians, and students from across the country to discuss cutting-edge frontiers in Commutative Algebra, Algebraic Geometry, Representation Theory, and Homological Methods.
                 </p>
 
                 {/* Event Highlights Badges */}
-                <div className="flex flex-wrap items-center justify-center gap-4 text-sm font-medium mb-10 sans">
+                <div className="fade-in fade-in-4 flex flex-wrap items-center justify-center gap-4 text-sm font-medium mb-10 sans">
                   <div
-                    className="flex items-center space-x-2 px-4 py-2 rounded-lg"
+                    className="soft-card flex items-center space-x-2 px-4 py-2 rounded-lg"
                     style={{ background: '#FFFFFF', border: '1px solid #DCD8CC', color: '#3F3D38' }}
                   >
-                    <Calendar size={18} style={{ color: '#3B4A6B' }} />
+                    <Calendar size={18} style={{ color: '#2A3A5C' }} />
                     <span>September 17–18, 2026</span>
                   </div>
                   <div
-                    className="flex items-center space-x-2 px-4 py-2 rounded-lg"
+                    className="soft-card flex items-center space-x-2 px-4 py-2 rounded-lg"
                     style={{ background: '#FFFFFF', border: '1px solid #DCD8CC', color: '#3F3D38' }}
                   >
                     <MapPin size={18} style={{ color: '#8C5A5A' }} />
@@ -262,18 +302,18 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sans">
+                <div className="fade-in fade-in-4 flex flex-col sm:flex-row justify-center items-center gap-4 sans">
                   <button
                     onClick={() => setActiveTab('schedule')}
-                    className="link-hover w-full sm:w-auto px-7 py-3 rounded-lg font-semibold flex items-center justify-center space-x-2"
-                    style={{ background: '#3B4A6B', color: '#FAF9F6' }}
+                    className="cta-button w-full sm:w-auto px-7 py-3 rounded-lg font-semibold flex items-center justify-center space-x-2"
+                    style={{ background: '#2A3A5C', color: '#FAF9F6' }}
                   >
                     <span>View Schedule</span>
                     <ChevronRight size={18} />
                   </button>
                   <button
                     onClick={() => setActiveTab('abstracts')}
-                    className="link-hover w-full sm:w-auto px-7 py-3 rounded-lg font-semibold flex items-center justify-center space-x-2"
+                    className="cta-button w-full sm:w-auto px-7 py-3 rounded-lg font-semibold flex items-center justify-center space-x-2"
                     style={{ background: '#FFFFFF', color: '#3F3D38', border: '1px solid #C9C4B4' }}
                   >
                     <BookOpen size={18} />
@@ -301,12 +341,12 @@ export default function App() {
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-6 rounded-lg transition-all"
-                    style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}
+                    className="soft-card stagger-card p-6 rounded-lg"
+                    style={{ background: '#FFFFFF', border: '1px solid #DCD8CC', animationDelay: `${0.1 + idx * 0.08}s` }}
                   >
                     <div
                       className="w-10 h-10 rounded-md flex items-center justify-center font-bold mb-4 mono"
-                      style={{ background: '#EFEBE0', color: '#3B4A6B' }}
+                      style={{ background: '#EFEBE0', color: '#2A3A5C' }}
                     >
                       §{idx + 1}
                     </div>
@@ -323,7 +363,7 @@ export default function App() {
         {activeTab === 'about' && (
           <div className="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#2B2B2E' }}>About the Symposium</h1>
-            <p className="font-medium mb-8 sans" style={{ color: '#3B4A6B' }}>Department of Mathematics, IISER Bhopal</p>
+            <p className="font-medium mb-8 sans" style={{ color: '#2A3A5C' }}>Department of Mathematics, IISER Bhopal</p>
 
             <div className="space-y-6 leading-relaxed" style={{ color: '#3F3D38' }}>
               <div className="p-6 sm:p-8 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}>
@@ -374,9 +414,9 @@ export default function App() {
 
             <div className="space-y-12">
               {scheduleData.map((day, idx) => (
-                <div key={idx} className="rounded-lg overflow-hidden" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}>
+                <div key={idx} className="stagger-card rounded-lg overflow-hidden" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC', animationDelay: `${idx * 0.1}s` }}>
                   <div className="px-6 py-4" style={{ background: '#EFEBE0', borderBottom: '1px solid #DCD8CC' }}>
-                    <h2 className="text-xl font-semibold" style={{ color: '#3B4A6B' }}>{day.date}</h2>
+                    <h2 className="text-xl font-semibold" style={{ color: '#2A3A5C' }}>{day.date}</h2>
                   </div>
                   <div className="divide-y" style={{ borderColor: '#E7E3D6' }}>
                     {day.events.map((event, eventIdx) => (
@@ -388,7 +428,7 @@ export default function App() {
                         <div className="flex items-start space-x-4">
                           <div
                             className="flex items-center space-x-1.5 text-xs font-semibold mono px-2.5 py-1 rounded-md whitespace-nowrap"
-                            style={{ color: '#3B4A6B', background: '#EFEBE0', border: '1px solid #D8D2C0' }}
+                            style={{ color: '#2A3A5C', background: '#EFEBE0', border: '1px solid #D8D2C0' }}
                           >
                             <Clock size={13} />
                             <span>{event.time}</span>
@@ -440,12 +480,12 @@ export default function App() {
 
             <div className="space-y-6">
               {filteredAbstracts.length > 0 ? (
-                filteredAbstracts.map((item) => (
-                  <div key={item.id} className="p-6 rounded-lg transition-all" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}>
+                filteredAbstracts.map((item, idx) => (
+                  <div key={item.id} className="soft-card stagger-card p-6 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC', animationDelay: `${idx * 0.07}s` }}>
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2 sans">
                       <span
                         className="text-xs font-medium mono px-2.5 py-0.5 rounded"
-                        style={{ color: '#3B4A6B', background: '#EFEBE0', border: '1px solid #D8D2C0' }}
+                        style={{ color: '#2A3A5C', background: '#EFEBE0', border: '1px solid #D8D2C0' }}
                       >
                         {item.topic}
                       </span>
@@ -474,18 +514,12 @@ export default function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sans">
               {/* Contact Information */}
               <div className="space-y-6">
-                <div className="p-6 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}>
+                <div className="soft-card p-6 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}>
                   <h2 className="text-lg font-semibold mb-4 flex items-center space-x-2" style={{ color: '#2B2B2E' }}>
-                    <Mail size={20} style={{ color: '#3B4A6B' }} />
+                    <Mail size={20} style={{ color: '#2A3A5C' }} />
                     <span>Correspondence</span>
                   </h2>
                   <div className="space-y-3 text-sm" style={{ color: '#3F3D38' }}>
-                    <p>
-                      <strong>Email:</strong>{' '}
-                      <a href="mailto:algebra2026@iiserb.ac.in" className="link-hover" style={{ color: '#3B4A6B' }}>
-                        algebra2026@iiserb.ac.in
-                      </a>
-                    </p>
                     <p>
                       <strong>Department Website:</strong>{' '}
                       <a
@@ -493,7 +527,7 @@ export default function App() {
                         target="_blank"
                         rel="noreferrer"
                         className="link-hover inline-flex items-center space-x-1"
-                        style={{ color: '#3B4A6B' }}
+                        style={{ color: '#2A3A5C' }}
                       >
                         <span>maths.iiserb.ac.in</span>
                         <ExternalLink size={12} />
@@ -502,9 +536,9 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="p-6 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}>
+                <div className="soft-card p-6 rounded-lg" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}>
                   <h2 className="text-lg font-semibold mb-4 flex items-center space-x-2" style={{ color: '#2B2B2E' }}>
-                    <Users size={20} style={{ color: '#3B4A6B' }} />
+                    <Users size={20} style={{ color: '#2A3A5C' }} />
                     <span>Organizing Committee</span>
                   </h2>
                   <ul className="space-y-2 text-sm" style={{ color: '#3F3D38' }}>
@@ -516,11 +550,11 @@ export default function App() {
               </div>
 
               {/* Location & Travel */}
-              <div className="p-6 rounded-lg flex flex-col justify-between" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}>
+              <div className="soft-card p-6 rounded-lg flex flex-col justify-between" style={{ background: '#FFFFFF', border: '1px solid #DCD8CC' }}>
                 <div>
                   <h2 className="text-lg font-semibold mb-4 flex items-center space-x-2" style={{ color: '#2B2B2E' }}>
                     <MapPin size={20} style={{ color: '#8C5A5A' }} />
-                    <span>How to Reach IISER Bhopal</span>
+                    <span>Getting to Campus</span>
                   </h2>
                   <p className="text-sm leading-relaxed mb-4" style={{ color: '#3F3D38' }}>
                     <strong>Address:</strong><br />
@@ -535,7 +569,7 @@ export default function App() {
                 </div>
 
                 <div className="mt-6 pt-4 text-xs mono" style={{ borderTop: '1px solid #E7E3D6', color: '#8A8577' }}>
-                  GPS Coordinates: 23.2842° N, 77.2773° E
+                  GPS Coordinates: 23.286845° N, 77.275766° E
                 </div>
               </div>
             </div>
