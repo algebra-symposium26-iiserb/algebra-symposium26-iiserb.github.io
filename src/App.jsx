@@ -57,11 +57,11 @@ export default function App() {
   const abstractsData = [
     {
       id: 1,
-      title: 'Syzygies and Free Resolutions over Commutative Rings',
-      speaker: 'Prof. Alex Mercer',
-      institution: 'IISc Bangalore',
-      topic: 'Commutative Algebra',
-      abstract: 'We review classical results on minimal free resolutions and explore recent developments concerning asymptotic behaviors of Betti numbers, Boij-Söderberg theory, and cohomology modules.',
+      title: 'TBA',
+      speaker: 'TBA',
+      institution: 'TBA',
+      topic: 'TBA',
+      abstract: 'TBA',
     },
     {
       id: 2,
